@@ -6,10 +6,7 @@ import com.Innobyte.UserService.service.UserServiceImpl;
 import com.Innobyte.UserService.util.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 //@Controller
@@ -90,12 +87,27 @@ public class UserController {
 
     //log-in
 
-    //reset password
 
     //forget password
+    @PostMapping("/forgot-password")
+    public ResponseEntity<String> forgotPassword(@RequestParam String email) {
+        String resetToken = userService.generateForgotPasswordToken(email);
+
+        return ResponseEntity.ok("Password reset token has been sent to your email: " + resetToken);
+    }
 
 
 
+    //reset password
 
+    @PostMapping("/reset-password")
+    public ResponseEntity<String> resetPassword(@RequestParam String token, @RequestParam String newPassword) {
+        boolean success = userService.resetPassword(token, newPassword);
+        if (success) {
+            return ResponseEntity.ok("Password has been successfully reset");
+        } else {
+            return ResponseEntity.badRequest().body("Failed to reset password");
+        }
+    }
 
 }

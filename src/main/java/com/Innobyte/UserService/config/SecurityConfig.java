@@ -31,7 +31,7 @@ public class SecurityConfig {
         http.csrf(csrf -> csrf.disable())
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)) // Ensure stateless sessions
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/v1/login", "/v1/signUp").permitAll() // Open endpoints for login/signup
+                        .requestMatchers("/v1/login", "/v1/signUp","v1/forgot-password","/v1/reset-password").permitAll() // Open endpoints for login/signup
                         .anyRequest().authenticated() // All other endpoints require authentication
                 );
 
