@@ -13,11 +13,6 @@ public class User {
     private String lastName;
     private String midddleName;
     private String dob;
-    private String email;
-    private String password;
-    private String phoneNumber;
-    private String country;
-    private String city;
-    private String pincode;
+
 
 }

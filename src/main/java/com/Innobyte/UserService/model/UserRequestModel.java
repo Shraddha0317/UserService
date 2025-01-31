@@ -25,7 +25,16 @@ public class UserRequestModel {
 
 
 
-
+//  "firstName"
+//   "lastName"
+//  "midddleName"
+//   "dob"
+//  "email"
+//  "password"
+//   "phoneNumber"
+//  "country"
+//  "city"
+//   "pincode"
 
 
 }

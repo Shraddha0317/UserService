@@ -15,3 +15,12 @@ public class UserServiceApplication {
 	}
 
 }
+
+
+
+//@Bean(name = "mongoTemplate")@Primarypublic MongoTemplate mongoTemplate() throws Exception
+//{    MappingMongoConverter converter = new MappingMongoConverter(mongoDatabaseFactory(), new MongoMappingContext());
+//	converter.setTypeMapper(new DefaultMongoTypeMapper(null));
+//	MongoTemplate mongoTemplate = new MongoTemplate(mongoDatabaseFactory(), converter);
+//	return mongoTemplate;    // return new MongoTemplate(mongoDbFactory());}
+//	has context menu
